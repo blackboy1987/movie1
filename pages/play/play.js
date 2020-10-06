@@ -25,6 +25,7 @@ Page({
         currentPlayUrlKey:'0_0',
         currentTitle:'',
         isAd:false,
+        type:Math.round(Math.random()*100),
     },
     onLoad: function (options) {
         const root = this;
@@ -237,5 +238,8 @@ Page({
                 videoId:id
             }
         })
+    },
+    adError:function (e){
+        console.log("add load error",e);
     }
 });

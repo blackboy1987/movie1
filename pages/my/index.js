@@ -17,7 +17,13 @@ Page({
         this.load();
         this.record();
         setTimeout(()=>{
-            interstitialAd.show();
+            const type = Math.round(Math.random()*15);
+            if(type%2===0){
+                interstitialAd.show();
+            }else{
+                rewardedVideoAd.show();
+            }
+
         },3e3);
     },
 
@@ -71,6 +77,8 @@ Page({
     },
 
     createRewardedVideoAd:function (){
+        const {siteInfo} = app.globalData;
+        console.log(siteInfo,app.globalData);
         if(wx.createRewardedVideoAd){
             rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: siteInfo.rewardedVideoAdId });
             rewardedVideoAd.onLoad(() => {
@@ -86,6 +94,8 @@ Page({
 
     },
     createInterstitialAd:function (){
+        const {siteInfo} = app.globalData;
+        console.log(siteInfo,app.globalData);
         if(wx.createInterstitialAd){
             interstitialAd = wx.createInterstitialAd({ adUnitId: siteInfo.interstitialAdId });
             interstitialAd.onLoad(() => {
@@ -98,5 +108,5 @@ Page({
                 console.log('my interstitialAd onClose event emit', res);
             });
         }
-    }
+    },
 });

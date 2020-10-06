@@ -1,3 +1,6 @@
-<view>
-    {{type%4}}
+<view class="ad">
+    <ad-custom wx:if="{{type%4===0&&siteInfo.nativeAdId}}" unit-id="{{siteInfo.nativeAdId}}"></ad-custom>
+    <ad wx:if="{{type%4===1&&siteInfo.gridAdId}}" unit-id="{{siteInfo.gridAdId}}" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+    <ad wx:if="{{type%4===2&&siteInfo.videoAdId}}" unit-id="{{siteInfo.videoAdId}}" ad-type="video" ad-theme="white"></ad>
+    <ad wx:if="{{type%4===3&&siteInfo.bannerAdId}}" bind:error="adError" unitId="{{siteInfo.bannerAdId}}"></ad>
 </view>

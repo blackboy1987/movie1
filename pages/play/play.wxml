@@ -39,7 +39,7 @@
                 show-casting-button="{{true}}"
         >
         </video>
-        <ad-custom unit-id="{{siteInfo.nativeAdId}}"></ad-custom>
+       <custom-ad></custom-ad>
         <view class="title">{{videoInfo.title}}</view>
         <view class="tool">
             <view class="toolItem">
@@ -77,8 +77,6 @@
                         <button>{{tools.split(url,":",0)}}</button>
                     </view>
                 </view>
-                <ad wx:if="{{index%2===0}}" unit-id="{{siteInfo.gridAdId}}" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
-                <ad wx:if="{{index%2===1}}" unit-id="{{siteInfo.videoAdId}}" ad-type="video" ad-theme="white"></ad>
             </view>
         </view>
     </view>
@@ -89,58 +87,52 @@
                 <image src="{{videoInfo.img}}" mode="widthFix"></image>
             </view>
             <view class="detail1">
-                <view class="name">{{videoInfo.title}}</view>
+                <view class="name">{{videoInfo.title || ''}}</view>
                 <view>
                     <text class="title1">别名</text>
-                    <text class="text">{{videoInfo.sub}}</text>
+                    <text class="text">{{videoInfo.sub || ''}}</text>
                 </view>
                 <view>
                     <text class="title1">主演：</text>
                     <view class="text">
-                        <text>{{videoInfo.actors}}</text>
+                        <text>{{videoInfo.actors || ''}}</text>
                     </view>
                 </view>
-                <view>
-                    <text class="title1">类型</text>
-                    <text class="text">{{videoInfo.sub}}</text>
-                </view>
-
                 <view>
                     <text class="title1">导演：</text>
                     <view class="text">
-                        <text>{{videoInfo.director}}</text>
+                        <text>{{videoInfo.director || ''}}</text>
                     </view>
                     <text class="title1">地区：</text>
                     <view class="text">
-                        <text>{{videoInfo.area}}</text>
+                        <text>{{videoInfo.area || ''}}</text>
                     </view>
                 </view>
 
                 <view>
                     <text class="title1">年份：</text>
                     <view class="text">
-                        <text>{{videoInfo.year}}</text>
+                        <text>{{videoInfo.year || ''}}</text>
                     </view>
                     <text class="title1">语言：</text>
                     <view class="text">
-                        <text>{{videoInfo.lang}}</text>
+                        <text>{{videoInfo.lang || ''}}</text>
                     </view>
                 </view>
 
                 <view>
                     <text class="title1">类型：</text>
                     <view class="text">
-                        <text>{{videoInfo.typeName}}</text>
+                        <text>{{videoInfo.typeName || ''}}</text>
                     </view>
                     <text class="title1">评分：</text>
                     <view class="text">
-                        <text>{{videoInfo.score}}</text>
+                        <text>{{videoInfo.score || 0}}</text>
                     </view>
                 </view>
             </view>
         </view>
     </view>
-    <ad bind:error="adError" unitId="{{siteInfo.bannerAdId}}" wx:if="{{siteInfo.bannerAdId}}"></ad>
     <view class="memo">
         <view class="title">
             <text>内容介绍</text>

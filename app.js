@@ -32,5 +32,6 @@ App({
     userInfo: null,
     CustomBar:60,
     StatusBar:24,
+    siteInfo:{},
   }
 })

@@ -6,7 +6,6 @@ import {errMap} from "../../utils/adUtils";
 
 let rewardedVideoAd = null;
 let interstitialAd = null;
-const siteInfo = getStorage("siteInfo");
 const app = getApp()
 
 Page({
@@ -22,6 +21,7 @@ Page({
       news:[],
     },
     list:{},
+    adPosition:Math.round(Math.random()*15),
   },
 
   getNavData(){
@@ -37,8 +37,6 @@ Page({
   onLoad: function () {
     interstitialAd = this.createInterstitialAd();
     rewardedVideoAd = this.createRewardedVideoAd();
-
-
     const root = this;
     root.getNavData();
     root.list('');
@@ -119,6 +117,8 @@ Page({
     console.log("add error",errMap[t.errCode]);
   },
   createRewardedVideoAd:function (){
+    const {siteInfo} = app.globalData;
+    console.log(siteInfo,app.globalData);
     if(wx.createRewardedVideoAd){
       rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: siteInfo.rewardedVideoAdId });
       rewardedVideoAd.onLoad(() => {
@@ -134,6 +134,8 @@ Page({
 
   },
   createInterstitialAd:function (){
+    const {siteInfo} = app.globalData;
+    console.log(siteInfo,app.globalData);
     if(wx.createInterstitialAd){
       interstitialAd = wx.createInterstitialAd({ adUnitId: siteInfo.interstitialAdId });
       interstitialAd.onLoad(() => {
@@ -146,5 +148,13 @@ Page({
         console.log('index interstitialAd onClose event emit', res);
       });
     }
-  }
+  },
+  onShareAppMessage: function() {
+    const {siteInfo} = app.globalData;
+    return {
+      title: siteInfo.name,
+      path: "/pages/index/index",
+      imageUrl: siteInfo.logo || '',
+    };
+  },
 })

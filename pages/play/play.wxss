@@ -1,6 +1,6 @@
 
 .play{
-
+    background: #FFFFFF;
 }
 .play .title{
     margin:16rpx 16rpx 32rpx;

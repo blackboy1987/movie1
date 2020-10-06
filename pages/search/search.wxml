@@ -19,11 +19,12 @@
         <view class="flex2">资源版本</view>
     </view>
     <scroll-view scroll-y="{{true}}" class="listResult">
-        <view bind:tap="goPlay" data-id="{{item.id}}" wx:key="{{item.id}}" wx:for="{{list}}" wx:for-item="item" class="item">
+        <view bind:tap="goPlay" data-id="{{item.id}}" wx:key="id" wx:for="{{list}}" wx:for-item="item" class="item">
             <view class="flex1">{{index+1}}</view>
             <view class="flex3">{{item.title}}</view>
             <view class="flex2">{{item.typeName || ''}}</view>
             <view class="flex2">{{item.remarks || ''}}</view>
         </view>
+        <custom-ad wx:if="{{list.length===0}}"></custom-ad>
     </scroll-view>
 </view>

@@ -1,4 +1,3 @@
-import {createRewardedVideoAd} from "./adUtils";
 
 export const go=(url)=>{
     wx.navigateTo({

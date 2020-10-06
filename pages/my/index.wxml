@@ -29,6 +29,7 @@
                     <text class="cuIcon-fork"></text> Fork</view>
             </view>
         </view>
+        <custom-ad></custom-ad>
         <view class="padding text-center text-grey bg-white shadow-warp">
             <view class="cu-bar bg-white">
                 <view class="action  text-orange">

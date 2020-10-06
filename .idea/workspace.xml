@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da681c61-b1de-4204-bfda-85d123526cd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/qiu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/qiu_act.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/my/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/my/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/my/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/my/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/qiu/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/qiu/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/qiu/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/qiu/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ad/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ad/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ad/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ad/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/my/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/my/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/play/play.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/play/play.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/play/play.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/play/play.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/play/play.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/play/play.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/play/play.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/play/play.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search/search.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search/search.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/common.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +32,8 @@
         <option value="JavaScript File" />
         <option value="Wechat mini program page js file(Page API)" />
         <option value="Wechat mini program page json file(Page API)" />
+        <option value="Wechat mini program component js file" />
+        <option value="Wechat mini program component json file" />
       </list>
     </option>
   </component>
@@ -41,19 +51,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../joke" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ColorUI-master/demo" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Desktop\movie1" />
+      <recent name="C:\Users\black\Desktop\movie1\pages\my\index" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\black\Desktop\movie1\wxs" />
       <recent name="C:\Users\black\Desktop\movie1\images" />
       <recent name="C:\Users\black\Desktop\movie1\pages\my" />
       <recent name="C:\Users\black\Desktop\movie1\pages\play" />
       <recent name="C:\Users\black\Desktop\movie1" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\black\Desktop\movie1\pages\my\index" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,6 +85,7 @@
       <workItem from="1601863125671" duration="9000" />
       <workItem from="1601864840830" duration="2048000" />
       <workItem from="1601951490403" duration="1413000" />
+      <workItem from="1601976240925" duration="6419000" />
     </task>
     <servers />
   </component>
@@ -85,10 +97,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601719565385" />
-    <state x="496" y="109" key="FileChooserDialogImpl" timestamp="1601863132317">
+    <state x="496" y="109" key="FileChooserDialogImpl" timestamp="1601981554826">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="496" y="109" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601863132317" />
+    <state x="496" y="109" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601981554826" />
     <state x="398" y="67" width="740" height="690" key="find.popup" timestamp="1601865168462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

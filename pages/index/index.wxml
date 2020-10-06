@@ -21,6 +21,7 @@
             </swiper-item>
           </swiper>
         </view>
+        <custom-ad wx:if="{{adPosition%4===0}}"></custom-ad>
         <view class="hot">
           <view class="cu-bar bg-white">
             <view class="action text-orange">
@@ -39,14 +40,12 @@
               </view>
             </view>
           </view>
-
-
+          <custom-ad wx:if="{{adPosition%4===1}}"></custom-ad>
         <view class="cu-bar bg-white">
           <view class="action  text-orange">
             <text class="cuIcon-video"></text>热播电视剧
           </view>
         </view>
-          <ad bind:close="adClose" bind:load="adLoad" bind:error="adError" data-type="index_ad" unitId="{{siteInfo.bannerAdId}}" wx:if="{{siteInfo.bannerAdId}}"></ad>
         <view class="cu-list col-3 grid no-border cs_padding-lr ">
           <view bind:tap="gotPlay" class="cu-item" data-id="{{item.id}}" wx:for="{{indexList.hottv}}" wx:key="id">
             <view class="cs_item_1">
@@ -60,7 +59,7 @@
           </view>
         </view>
         </view>
-        <ad unit-id="{{siteInfo.gridAdId}}" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+        <custom-ad wx:if="{{adPosition%4===2}}"></custom-ad>
         <view class="cu-bar bg-white">
           <view class="action">
             <text class="cuIcon-new text-green"></text>最近更新
@@ -97,12 +96,12 @@
     </swiper-item>
     <swiper-item wx:for="{{navData}}" wx:for-item="item" wx:key="id">
       <scroll-view scrollY class="cs_warp bg-white" style="height:calc(100vh);">
-        <ad unit-id="{{siteInfo.bannerAdId}}" wx:if="{{siteInfo.bannerAdId}}"></ad>
         <view class="cu-bar bg-white">
           <view class="action  text-orange">
             <text class="cuIcon-video"></text>最近更新{{item.name}}
           </view>
         </view>
+        <custom-ad></custom-ad>
         <view class="cu-list col-3 grid no-border cs_padding-lr ">
           <view bind:tap="gotPlay" class="cu-item" data-id="{{item.id}}" wx:for="{{list[item.id]}}" wx:key="id">
             <view class="cs_item_1">
