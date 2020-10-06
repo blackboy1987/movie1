@@ -1,0 +1,165 @@
+
+.play{
+
+}
+.play .title{
+    margin:16rpx 16rpx 32rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+}
+
+.play .tool{
+    margin:16rpx;
+    height: 120rpx;
+    display: flex;
+    font-size: 28rpx;
+    justify-content: space-between;
+}
+.play .tool .toolItem{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:28rpx
+}
+.play .tool .toolItem .icon{
+    font-size:26px
+}
+
+
+.play .danMu {
+    height:80rpx;
+    line-height: 80rpx;
+    margin:0 16rpx;
+    display: flex;
+}
+.play .danMu>input{
+    height:80rpx;
+    line-height: 80rpx;
+    flex: 5;
+}
+.play .danMu>text{
+    height:80rpx;
+    line-height: 80rpx;
+    flex:1;
+    text-align: center;
+    background: #489492;
+    color: #ffffff;
+}
+.play .xianlu{
+    margin: 0 16rpx;
+}
+
+.play .xianlu .line{
+    margin-top: 24rpx;
+    border-bottom: 2rpx #d6d6d6 solid;
+}
+.play .xianlu .line .bar{
+    display: flex;
+    justify-content: space-between;
+}
+.play .xianlu .line .bar .title{
+    padding-left:24rpx;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: bold;
+    border-left: 10rpx red solid;
+}
+
+.play .xianlu .line .bar .action{
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.play .xianlu .line .list{
+    display: flex;
+    margin-top:24rpx;
+    margin-bottom: 28rpx;
+    flex-wrap: wrap;
+}
+
+.play .xianlu .line .list .item{
+    margin-bottom: 16rpx;
+}
+
+.play .xianlu .line .list .item>button{
+    width:90%;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+    font-size: 26rpx;
+}
+.play .xianlu .line .list .current>button{
+    background-color: #85DA46;
+}
+
+
+
+
+
+
+
+
+
+
+.detail{
+    padding:16rpx;
+}
+.detail .title{
+    margin-bottom: 16px;
+    color:#535353;
+}
+.detail .title text{
+    border-bottom: 5rpx solid #489492;
+}
+.detail .content{
+    display: flex;
+    align-items: flex-start;
+}
+.detail .content .img{
+    flex:1;
+}
+.detail .content .img>image{
+    width:100%;
+    border-radius: 20rpx;
+}
+.detail .content .detail1{
+    flex:2;
+    padding-left:16rpx;
+    font-size: 26rpx;
+}
+.detail .content .detail1>.name{
+    font-size:32rpx;
+    color: #303030;
+    font-weight: 800;
+}
+.detail .content .detail1>view{
+    display: flex;
+}
+.detail .content .detail1>view .title1{
+    color: #747474;
+    width:80rpx;
+}
+.detail .content .detail1>view .text{
+    flex:1;
+    color: #2f2f2f;
+}
+
+.memo {
+    padding:16rpx;
+}
+.memo .title{
+    color:#535353;
+    margin-bottom: 16px;
+}
+.memo .title>text{
+    border-bottom: 5px solid #489492;
+}
+.memo .content{
+
+}

@@ -1,0 +1,118 @@
+<cu-custom bgColor="bg-gradual-pink" CustomBar="300" isBack="{{false}}">
+    <view slot="backText">返回</view>
+    <view slot="content">我的</view>
+</cu-custom>
+<view class="container">
+    <scroll-view scroll-y class="scrollPage">
+        <view class="UCenter-bg" bind:tap="bindInfo">
+            <image style="border-radius: 100%;" src="{{userInfo.avatarUrl || '/images/logo.png'}}" class="png" mode="widthFix"></image>
+            <view class="text-xl">{{userInf.nickName}}</view>
+            <view class="margin-top-sm">
+                <text>{{userInfo.rankName}}</text>
+            </view>
+            <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+        </view>
+        <view class="padding flex text-center text-grey bg-white shadow-warp">
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-xxl text-orange">{{userInfo.visitSeconds || 0}}</view>
+                <view class="margin-top-sm">
+                    <text class="cuIcon-attentionfill"></text> View</view>
+            </view>
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-xxl text-blue">{{userInfo.rankName}}</view>
+                <view class="margin-top-sm">
+                    <text class="cuIcon-favorfill"></text> Star</view>
+            </view>
+            <view class="flex flex-sub flex-direction">
+                <view class="text-xxl text-green">{{userInfo.days || 0}} 天</view>
+                <view class="margin-top-sm">
+                    <text class="cuIcon-fork"></text> Fork</view>
+            </view>
+        </view>
+        <view class="padding text-center text-grey bg-white shadow-warp">
+            <view class="cu-bar bg-white">
+                <view class="action  text-orange">
+                    <text class="cuIcon-attentionfill"></text>最近阅览
+                </view>
+            </view>
+            <scroll-view scrollX style="height:100px">
+                <view class="flex">
+                    <view bindtap="gotoplay" class="re_item" data-vid="{{item.id}}" wx:for="{{records}}" wx:key="sb">
+                        <view class="cs_item_1">
+                            <view class="item_img_box">
+                                <image mode="aspectFill" src="{{item.img}}"></image>
+                                <view class="item_lang text-white padding-lr-xs text-xs ">
+                                    {{item.lang}}
+                                </view>
+                            </view>
+                            <view class="cs_video_title item_name text-xs">
+                                {{item.title}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" wx:if="{{false}}">
+            <view class="cu-item arrow">
+                <view class="content" bindtap="CopyLink" data-link="https://github.com/weilanwl/ColorUI">
+                    <text class="cuIcon-github text-grey"></text>
+                    <text class="text-grey">GitHub</text>
+                </view>
+            </view>
+            <view class="cu-item arrow">
+                <navigator class="content" url="/pages/about/about/about" hover-class="none">
+                    <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+                    <text class="text-grey">关于ColorUI组件库</text>
+                </navigator>
+            </view>
+            <view class="cu-item arrow">
+                <navigator class="content" url="/pages/about/log/log" hover-class="none">
+                    <text class="cuIcon-formfill text-green"></text>
+                    <text class="text-grey">日志</text>
+                </navigator>
+            </view>
+            <view class="cu-item arrow">
+                <view class="content" bindtap="showQrcode">
+                    <text class="cuIcon-appreciatefill text-red"></text>
+                    <text class="text-grey">赞赏支持</text>
+                </view>
+            </view>
+            <view class="cu-item arrow">
+                <button class="cu-btn content" open-type="feedback">
+                    <text class="cuIcon-writefill text-cyan"></text>
+                    <text class="text-grey">意见反馈</text>
+                </button>
+            </view>
+            <view class="cu-item arrow">
+                <navigator class="content" url="/pages/about/test/list" hover-class="none">
+                    <text class="cuIcon-creativefill text-orange"></text>
+                    <text class="text-grey">Bug测试</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="cu-tabbar-height"></view>
+    </scroll-view>
+</view>
+
+
+
+<view class="cu-modal {{show? 'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">授权登录</view>
+            <view bindtap="hideModal" class="action">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+            点击确定授权登录
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class="action">
+                <button bind:tap="hideModal" class="cu-btn line-green text-green" style="width: 120rpx;margin: 0 30rpx;">取消</button>
+                <button bind:getuserinfo="authLogin" bind:tap="hideModal" class="cu-btn bg-green margin-left" open-type="getUserInfo" style="width: 120rpx;">确定</button>
+            </view>
+        </view>
+    </view>
+</view>

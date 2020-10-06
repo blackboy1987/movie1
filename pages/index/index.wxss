@@ -1,0 +1,140 @@
+.nav{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #f7f7f7;
+  font-size: 22rpx;
+  white-space: nowrap;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.nav .navItem{
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.nav .current{
+  color:red;
+}
+
+
+.swiper{
+
+}
+
+.swiper-item{
+  height: 500rpx;
+}
+
+.screen-swiper{
+  min-height: 375rpx;
+}
+
+.swiperItemTitle{
+  position: absolute;
+  width: 100%;
+  height: 80rpx;
+  line-height: 90rpx;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  font-size: 34rpx;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+.cs_item_1 {
+  width: 220rpx;
+  margin: 0 auto;
+}
+.cs_item_1 .item_name{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  font-size: 26rpx;
+  margin-top: 4px;
+}
+.cs_item_1 .item_img_box {
+  width: 220rpx;
+  height: 317rpx;
+  position: relative;
+  background-color: #333;
+}
+
+.cs_item_1 .item_img_box image {
+  width: 100%;
+  height: 100%;
+}
+.cs_item_1 .item_img_box .item_lang {
+  position: absolute;
+  top: 20rpx;
+  background-color: rgba(57,180,73,0.7);
+}
+
+.cs_item_1 .item_img_box .item_vession {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cs_padding-lr {
+  padding-left: 20rpx!important;
+  padding-right: 20rpx!important;
+}
+
+
+.cs_video_content {
+  box-sizing: border-box;
+  width: 750rpx;
+  margin: 0 auto;
+}
+.cs_video_item {
+  width: 345rpx;
+  box-shadow: 1px 1px 5px #bbb;
+  border-radius: 15rpx;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.cs_video_banner {
+  position: relative;
+}
+.cs_video_banner image {
+  width: 345rpx;
+  height: 200rpx;
+}
+
+.cs_video_basc {
+  height: 80rpx;
+  padding: 0 15rpx;
+}
+.cs_video_title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 27rpx;
+  color: #333333;
+}
+.cs_video_version {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  bottom: 10rpx;
+  background-color: rgba(0,0,0,0.3);
+  font-size: 24rpx;
+}

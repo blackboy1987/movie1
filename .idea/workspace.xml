@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da681c61-b1de-4204-bfda-85d123526cd2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/qiu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/qiu_act.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/my/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/my/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/my/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/my/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/qiu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/qiu/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/qiu/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/qiu/index.wxss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Wechat mini program page js file(Page API)" />
+        <option value="Wechat mini program page json file(Page API)" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iHRMp0fJRpPQAGluQPAmExJEFg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../joke" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Desktop\movie1\wxs" />
+      <recent name="C:\Users\black\Desktop\movie1\images" />
+      <recent name="C:\Users\black\Desktop\movie1\pages\my" />
+      <recent name="C:\Users\black\Desktop\movie1\pages\play" />
+      <recent name="C:\Users\black\Desktop\movie1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Desktop\movie1\pages\my\index" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da681c61-b1de-4204-bfda-85d123526cd2" name="Default Changelist" comment="" />
+      <created>1601562486035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601562486035</updated>
+      <workItem from="1601562487072" duration="12182000" />
+      <workItem from="1601594781640" duration="23192000" />
+      <workItem from="1601681499565" duration="7358000" />
+      <workItem from="1601718829907" duration="5303000" />
+      <workItem from="1601768883430" duration="13320000" />
+      <workItem from="1601812817588" duration="9957000" />
+      <workItem from="1601862742073" duration="11000" />
+      <workItem from="1601863125671" duration="9000" />
+      <workItem from="1601864840830" duration="2048000" />
+      <workItem from="1601951490403" duration="1413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601719565385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601719565385" />
+    <state x="496" y="109" key="FileChooserDialogImpl" timestamp="1601863132317">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="109" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601863132317" />
+    <state x="398" y="67" width="740" height="690" key="find.popup" timestamp="1601865168462">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="398" y="67" width="740" height="690" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601865168462" />
+    <state x="342" y="183" key="run.anything.popup" timestamp="1601608915362">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="342" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1601608915362" />
+  </component>
+</project>

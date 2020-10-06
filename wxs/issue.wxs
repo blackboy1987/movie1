@@ -1,0 +1,15 @@
+var split = function (val,fuhao,index){
+    var strs = val.split(fuhao);
+    if(index){
+        if(index>=strs.length){
+            return strs[strs.length-1];
+        }
+        return strs[index];
+    }else{
+        return strs[0];
+    }
+}
+
+module.exports = {
+    split:split
+}

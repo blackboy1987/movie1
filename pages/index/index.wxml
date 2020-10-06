@@ -1,0 +1,121 @@
+<cu-custom bgColor="bg-gradual-pink" CustomBar="300" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{siteInfo.name}}</view>
+</cu-custom>
+<view class="container">
+  <scroll-view scrollWithAnimation class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}">
+    <text bind:tap="tabSelect" class="navItem cuIcon-hot {{currentTabId===0?'text-green cur text-bold':''}}" data-index="0">热门推荐</text>
+    <view bind:tap="tabSelect" class="navItem {{item.id===currentTabId?'text-green cur text-bold':''}}" data-id="{{item.id}}" data-index="{{index+1}}" wx:for="{{navData}}" wx:key="id">
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+  <swiper bind:change="cardSwiper" class="cs_content_box" current="{{currentSwiper}}" style="height:calc(100vh);width: 100%;">
+    <swiper-item key="0">
+      <scroll-view scrollY style="height:calc(100vh);">
+        <view class="banner">
+          <swiper autoplay="true" class="screen-swiper" circular="true" duration="500" interval="5000">
+            <swiper-item wx:for="{{siteInfo.carousels}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+              <image mode="aspectFill" src="{{item.img}}"></image>
+              <view class="swiperItemTitle">{{item.title}}</view>
+            </swiper-item>
+          </swiper>
+        </view>
+        <view class="hot">
+          <view class="cu-bar bg-white">
+            <view class="action text-orange">
+              <text class="cuIcon-video"></text>热播电影
+            </view>
+          </view>
+          <view class="cu-list col-3 grid no-border cs_padding-lr ">
+            <view bind:tap="gotPlay" class="cu-item" wx:for="{{indexList.hotMovies}}" data-id="{{item.id}}" wx:key="id">
+              <view class="cs_item_1">
+                <view class="item_img_box">
+                  <image mode="aspectFill" src="{{item.img}}"></image>
+                  <view class="item_lang text-white padding-lr-xs text-xs ">{{item.lang}}</view>
+                  <view class="item_vession" wx:if="{{item.remarks}}">{{item.remarks}}</view>
+                </view>
+                <view class="cs_video_title item_name">{{item.title}}</view>
+              </view>
+            </view>
+          </view>
+
+
+        <view class="cu-bar bg-white">
+          <view class="action  text-orange">
+            <text class="cuIcon-video"></text>热播电视剧
+          </view>
+        </view>
+          <ad bind:close="adClose" bind:load="adLoad" bind:error="adError" data-type="index_ad" unitId="{{siteInfo.bannerAdId}}" wx:if="{{siteInfo.bannerAdId}}"></ad>
+        <view class="cu-list col-3 grid no-border cs_padding-lr ">
+          <view bind:tap="gotPlay" class="cu-item" data-id="{{item.id}}" wx:for="{{indexList.hottv}}" wx:key="id">
+            <view class="cs_item_1">
+              <view class="item_img_box">
+                <image mode="aspectFill" src="{{item.img}}"></image>
+                <view class="item_lang text-white padding-lr-xs text-xs ">{{item.lang}}</view>
+                <view class="item_vession" wx:if="{{item.remarks}}">{{item.remarks}}</view>
+              </view>
+              <view class="cs_video_title item_name">{{item.title}}</view>
+            </view>
+          </view>
+        </view>
+        </view>
+        <ad unit-id="{{siteInfo.gridAdId}}" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+        <view class="cu-bar bg-white">
+          <view class="action">
+            <text class="cuIcon-new text-green"></text>最近更新
+          </view>
+          <view class="action"></view>
+        </view>
+        <view class="cs_video_content">
+          <view class="cu-list col-2 grid no-border">
+            <view class="cu-item padding-bottom-sm" wx:for="{{indexList.news}}" wx:key="index">
+              <view bind:tap="gotPlay" class="cs_video_item" data-id="{{item.id}}">
+                <view class="cs_video_banner">
+                  <image data-index="{{index}}" mode="aspectFill" src="{{item.img}}"></image>
+                  <view class="cs_video_version">
+                    <view class="flex">
+                      <view class="flex-sub text-left padding-left-sm">{{item.lang}}</view>
+                      <view class="flex-treble text-right">{{item.remarks}}</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="cs_video_basc">
+                  <view class="cs_video_title text-left">{{item.title}}</view>
+                  <view class="flex text-xs">
+                    <view class="flex-sub text-left" style="margin-top: 4px;">{{item.typeName}}</view>
+                    <view class="flex-sub text-right" style="margin-top: 4px;">{{item.area}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+    <swiper-item wx:for="{{navData}}" wx:for-item="item" wx:key="id">
+      <scroll-view scrollY class="cs_warp bg-white" style="height:calc(100vh);">
+        <ad unit-id="{{siteInfo.bannerAdId}}" wx:if="{{siteInfo.bannerAdId}}"></ad>
+        <view class="cu-bar bg-white">
+          <view class="action  text-orange">
+            <text class="cuIcon-video"></text>最近更新{{item.name}}
+          </view>
+        </view>
+        <view class="cu-list col-3 grid no-border cs_padding-lr ">
+          <view bind:tap="gotPlay" class="cu-item" data-id="{{item.id}}" wx:for="{{list[item.id]}}" wx:key="id">
+            <view class="cs_item_1">
+              <view class="item_img_box">
+                <image mode="aspectFill" src="{{item.img}}"></image>
+                <view class="item_lang text-white padding-lr-xs text-xs ">{{item.lang}}</view>
+                <view class="item_vession">{{item.remarks}}</view>
+              </view>
+              <view class="cs_video_title item_name">{{item.title}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

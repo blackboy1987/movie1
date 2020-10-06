@@ -1,0 +1,153 @@
+<wxs src="../../wxs/issue.wxs" module="tools" />
+<cu-custom bgColor="bg-gradual-pink" isBack="{{!is_share}}" isCustom="{{is_share}}">
+    <view slot="content">{{videoInfo.title}}</view>
+</cu-custom>
+<view class="container">
+
+    <view wx:if="{{siteInfo.status===2}}" class="play">
+        <video
+                id='myVideo'
+                ad-unit-id="{{siteInfo.videoFrontAdId}}"
+                style="width: 100%"
+                bind:play="onPlay"
+                bind:error="onError"
+                bind:ended="onEnd"
+                bind:timeupdate="onTimeUpdate"
+                bind:waiting="onWaiting"
+                bind:loadedmetadata="loadedmetadata"
+                bind:pause="inPause"
+                bind:bind:fullscreenchange="bindfullscreenchange"
+                show-center-play-btn="{{true}}"
+                show-fullscreen-btn="{{true}}"
+                show-mute-btn="{{true}}"
+                show-play-btn="{{true}}"
+                show-progress="{{true}}"
+                controls="{{true}}"
+                autoplay="{{false}}"
+                danmu-btn="true"
+                src="{{currentPlayUrl}}"
+                poster="{{videoInfo.img}}"
+                enable-danmu="{{true}}"
+                page-gesture="{{true}}"
+                title="{{currentTitle}}"
+                play-btn-position="center"
+                enable-play-gesture="{{true}}"
+                vslide-gesture="{{true}}"
+                enable-progress-gesture="{{true}}"
+                auto-pause-if-navigate="{{true}}"
+                auto-pause-if-open-native="{{true}}"
+                show-casting-button="{{true}}"
+        >
+        </video>
+        <ad-custom unit-id="{{siteInfo.nativeAdId}}"></ad-custom>
+        <view class="title">{{videoInfo.title}}</view>
+        <view class="tool">
+            <view class="toolItem">
+                <view class="icon cuIcon-weixin"></view>
+                <view className="text">分享</view>
+                <button openType="share" style="position:absolute;height:100rpx;width: 200rpx;opacity: 0"></button>
+            </view>
+            <view class="toolItem" bind:tap="kefu">
+                <view class="icon cuIcon-picfill"></view>
+                <view className="text">剧照</view>
+            </view>
+            <view class="toolItem">
+                <view class="icon cuIcon-messagefill"></view>
+                <view className="text">留言</view>
+            </view>
+            <view class="toolItem">
+                <picker style="width: 100%;text-align: center;" bind:change="rateChange" range="{{rate}}" value="{{rateIndex}}">
+                    <view class="icon cuIcon-play_forward_fill"></view>
+                    <view className="text">{{''+rate[rateIndex]+'x倍'+''}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="danMu" style="display: none;">
+            <input placeholder='发个弹幕聊一聊吧' value=""></input>
+            <text>发送</text>
+        </view>
+        <view class="xianlu">
+            <view class="line" wx:for="{{videoInfo.playUrls}}" wx:for-item="playUrl" wx:key="index">
+                <view class="bar">
+                    <view class="title">线路 {{index+1}}</view>
+                    <view class="action">{{playUrl.urls.length}}个视频</view>
+                </view>
+                <view class="cu-list col-3 grid no-border list">
+                    <view bind:tap="setUrl" data-index="{{index+'_'+index1}}" data-url="{{url}}" class="item {{currentPlayUrlKey===index+'_'+index1 ? 'current':''}}" wx:for="{{playUrl.urls}}" wx:for-item="url" wx:for-index="index1" wx:key="index_index1">
+                        <button>{{tools.split(url,":",0)}}</button>
+                    </view>
+                </view>
+                <ad wx:if="{{index%2===0}}" unit-id="{{siteInfo.gridAdId}}" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+                <ad wx:if="{{index%2===1}}" unit-id="{{siteInfo.videoAdId}}" ad-type="video" ad-theme="white"></ad>
+            </view>
+        </view>
+    </view>
+    <view class="detail">
+        <view class="title"><text>基本信息</text></view>
+        <view class="content">
+            <view class="img">
+                <image src="{{videoInfo.img}}" mode="widthFix"></image>
+            </view>
+            <view class="detail1">
+                <view class="name">{{videoInfo.title}}</view>
+                <view>
+                    <text class="title1">别名</text>
+                    <text class="text">{{videoInfo.sub}}</text>
+                </view>
+                <view>
+                    <text class="title1">主演：</text>
+                    <view class="text">
+                        <text>{{videoInfo.actors}}</text>
+                    </view>
+                </view>
+                <view>
+                    <text class="title1">类型</text>
+                    <text class="text">{{videoInfo.sub}}</text>
+                </view>
+
+                <view>
+                    <text class="title1">导演：</text>
+                    <view class="text">
+                        <text>{{videoInfo.director}}</text>
+                    </view>
+                    <text class="title1">地区：</text>
+                    <view class="text">
+                        <text>{{videoInfo.area}}</text>
+                    </view>
+                </view>
+
+                <view>
+                    <text class="title1">年份：</text>
+                    <view class="text">
+                        <text>{{videoInfo.year}}</text>
+                    </view>
+                    <text class="title1">语言：</text>
+                    <view class="text">
+                        <text>{{videoInfo.lang}}</text>
+                    </view>
+                </view>
+
+                <view>
+                    <text class="title1">类型：</text>
+                    <view class="text">
+                        <text>{{videoInfo.typeName}}</text>
+                    </view>
+                    <text class="title1">评分：</text>
+                    <view class="text">
+                        <text>{{videoInfo.score}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <ad bind:error="adError" unitId="{{siteInfo.bannerAdId}}" wx:if="{{siteInfo.bannerAdId}}"></ad>
+    <view class="memo">
+        <view class="title">
+            <text>内容介绍</text>
+        </view>
+        <view class="content">
+            <rich-text style="color:'#343434';font-size:26rpx" nodes="{{videoInfo.content}}"></rich-text>
+        </view>
+    </view>
+
+</view>

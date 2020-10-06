@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-green" >
+    <view slot="content">搜索</view>
+</cu-custom>
+<view class="cu-bar bg-gradual-green search">
+    <view class="search-form radius">
+        <text class="cuIcon-search"></text>
+        <input bindinput="inputStr" confirmType="search" placeholder="搜索电影/电视等关键字" type="text" value="{{keywords}}"></input>
+    </view>
+    <view class="action" bind:tap="search">
+        <text class="cuIcon-search"></text>
+        <text>搜索</text>
+    </view>
+</view>
+<view class="list">
+    <view class="listHeader">
+        <view class="flex1">序号</view>
+        <view class="flex3">电影名称</view>
+        <view class="flex2">类型</view>
+        <view class="flex2">资源版本</view>
+    </view>
+    <scroll-view scroll-y="{{true}}" class="listResult">
+        <view bind:tap="goPlay" data-id="{{item.id}}" wx:key="{{item.id}}" wx:for="{{list}}" wx:for-item="item" class="item">
+            <view class="flex1">{{index+1}}</view>
+            <view class="flex3">{{item.title}}</view>
+            <view class="flex2">{{item.typeName || ''}}</view>
+            <view class="flex2">{{item.remarks || ''}}</view>
+        </view>
+    </scroll-view>
+</view>
