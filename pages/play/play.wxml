@@ -23,8 +23,9 @@
                 show-play-btn="{{true}}"
                 show-progress="{{true}}"
                 controls="{{true}}"
-                autoplay="{{false}}"
+                autoplay="{{true}}"
                 danmu-btn="true"
+                danmu-list="{{danMuList}}"
                 src="{{currentPlayUrl}}"
                 poster="{{videoInfo.img}}"
                 enable-danmu="{{true}}"
@@ -74,7 +75,7 @@
                 </view>
                 <view class="cu-list col-3 grid no-border list">
                     <view bind:tap="setUrl" data-index="{{index+'_'+index1}}" data-url="{{url}}" class="item {{currentPlayUrlKey===index+'_'+index1 ? 'current':''}}" wx:for="{{playUrl.urls}}" wx:for-item="url" wx:for-index="index1" wx:key="index_index1">
-                        <button>{{tools.split(url,":",0)}}</button>
+                        <button style="padding:8px">{{tools.split(url,"@@@",0)}}</button>
                     </view>
                 </view>
             </view>

@@ -11,7 +11,7 @@ const app = getApp()
 Page({
   data: {
     systemInfo: getStorage("systemInfo"),
-    siteInfo:getStorage("siteInfo"),
+    siteInfo:app.globalData.siteInfo,
     navData:[],
     currentTabId:0,
     currentSwiper:0,
@@ -26,7 +26,8 @@ Page({
 
   getNavData(){
     const root = this;
-    request("api/categories",(data)=>{
+    request("api/categories",(result)=>{
+      const {data} = result;
       root.setData({
         navData:[
           ...data,
@@ -34,13 +35,15 @@ Page({
       })
     })
   },
-  onLoad: function () {
+  onLoad: function (e) {
+    this.dealShareInfo(e);
     interstitialAd = this.createInterstitialAd();
     rewardedVideoAd = this.createRewardedVideoAd();
     const root = this;
     root.getNavData();
     root.list('');
     root.setData({
+      siteInfo:getStorage("siteInfo"),
       CustomBar: app.globalData.CustomBar
     });
     setTimeout(function() {
@@ -79,7 +82,8 @@ Page({
   },
   list(categoryId){
     const root = this;
-    request("api/list",(data)=>{
+    request("api/list",(result)=>{
+      const {data} = result;
       if(!categoryId){
         root.setData({
           indexList:data,
@@ -118,7 +122,6 @@ Page({
   },
   createRewardedVideoAd:function (){
     const {siteInfo} = app.globalData;
-    console.log(siteInfo,app.globalData);
     if(wx.createRewardedVideoAd){
       rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: siteInfo.rewardedVideoAdId });
       rewardedVideoAd.onLoad(() => {
@@ -135,7 +138,6 @@ Page({
   },
   createInterstitialAd:function (){
     const {siteInfo} = app.globalData;
-    console.log(siteInfo,app.globalData);
     if(wx.createInterstitialAd){
       interstitialAd = wx.createInterstitialAd({ adUnitId: siteInfo.interstitialAdId });
       interstitialAd.onLoad(() => {
@@ -149,12 +151,25 @@ Page({
       });
     }
   },
+  // 分享首页
   onShareAppMessage: function() {
     const {siteInfo} = app.globalData;
     return {
       title: siteInfo.name,
-      path: "/pages/index/index",
+      path: "/pages/index/index?type=0&parentId=2",
       imageUrl: siteInfo.logo || '',
     };
   },
+  dealShareInfo:function (e){
+    const {parentId} = e;
+    if(parentId){
+      request("api/tuijian",(data)=>{
+      },{
+        data:{
+          parentId:2,
+          token:getStorage("token"),
+        }
+      })
+    }
+  }
 })

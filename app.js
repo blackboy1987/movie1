@@ -3,13 +3,15 @@ import {setStorage, wxGetSystemInfo} from "./utils/wxUtils";
 import request from "./utils/request";
 
 App({
-  onLaunch: function () {
+  onLaunch: function (e) {
     const root = this;
     wx.login({
       success:(res)=>{
         const {code} = res;
-        request('api/login',(data)=>{
-          const {token} = data;
+        request('api/login',(result)=>{
+          const {data} = result;
+          const {token,id} = data;
+          setStorage("userId",id);
           setStorage("token",token);
         },{
           data:{
@@ -18,7 +20,8 @@ App({
         })
       }
     })
-    request("api/site",(data)=>{
+    request("api/site",(result)=>{
+      const {data} = result;
       root.globalData.siteInfo = data;
       setStorage("siteInfo",data);
     });

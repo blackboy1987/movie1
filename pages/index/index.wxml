@@ -15,7 +15,7 @@
       <scroll-view scrollY style="height:calc(100vh);">
         <view class="banner">
           <swiper autoplay="true" class="screen-swiper" circular="true" duration="500" interval="5000">
-            <swiper-item wx:for="{{siteInfo.carousels}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+            <swiper-item bind:tap="gotPlay" data-id="{{item.id}}" wx:for="{{siteInfo.carousels}}" wx:for-item="item" wx:for-index="index" wx:key="id">
               <image mode="aspectFill" src="{{item.img}}"></image>
               <view class="swiperItemTitle">{{item.title}}</view>
             </swiper-item>

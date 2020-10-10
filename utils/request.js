@@ -36,7 +36,7 @@ const request = (url,callback,options={})=>{
             wx.hideLoading();
             const {statusCode} = res;
             if(statusCode>=200&&statusCode<=299){
-                callback(res.data.data);
+                callback(res.data);
             }else {
                 wx.showToast({
                     title:res.data.data.msg,

@@ -5,6 +5,8 @@ const siteInfo = getStorage("siteInfo");
 let rewardedVideoAd = null;
 let interstitialAd = null;
 
+const app = getApp();
+
 Page({
     data: {
         userInfo:{},
@@ -29,7 +31,8 @@ Page({
 
     load:function (){
         const root = this;
-        request("api/user",(data)=>{
+        request("api/user",(result)=>{
+            const {data} = result;
             root.setData({
                 userInfo:data,
             })
@@ -57,7 +60,8 @@ Page({
         getUserInfo((data)=>{
             const userInfo = data.userInfo;
             if(data.errMsg==="getUserInfo:ok"){
-                request('api/update',(data)=>{
+                request('api/update',(result)=>{
+                    const {data} = result;
                     root.setData({
                         userInfo:data,
                     })
@@ -69,7 +73,8 @@ Page({
     },
     record: function(t) {
         const root = this;
-        request('api/record_list',(data)=>{
+        request('api/record_list',(result)=>{
+            const {data} = result;
             root.setData({
                 records:data,
             })
@@ -78,7 +83,6 @@ Page({
 
     createRewardedVideoAd:function (){
         const {siteInfo} = app.globalData;
-        console.log(siteInfo,app.globalData);
         if(wx.createRewardedVideoAd){
             rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: siteInfo.rewardedVideoAdId });
             rewardedVideoAd.onLoad(() => {
@@ -95,7 +99,6 @@ Page({
     },
     createInterstitialAd:function (){
         const {siteInfo} = app.globalData;
-        console.log(siteInfo,app.globalData);
         if(wx.createInterstitialAd){
             interstitialAd = wx.createInterstitialAd({ adUnitId: siteInfo.interstitialAdId });
             interstitialAd.onLoad(() => {

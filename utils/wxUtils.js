@@ -1,23 +1,5 @@
 import request from "./request";
 
-export const login = (callback) =>{
-    wx.login({
-        success:(data)=>{
-            if(data.code){
-                request("login?code="+data.code,(result)=>{
-                    setStorage("userInfo",result);
-                    if(result.token){
-                        setStorage("userToken",result.token);
-                    }
-                    if(callback){
-                        callback(result);
-                    }
-                });
-            }
-        }
-    })
-}
-
 export const setStorage=(key,value)=>{
     wx.setStorageSync(key,value);
 }

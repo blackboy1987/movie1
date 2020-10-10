@@ -44,7 +44,8 @@ Page({
 
 
         if(keywords){
-            request("api/search",(data)=>{
+            request("api/search",(result)=>{
+                const {data} = result;
                 root.setData({
                     list:data,
                 });
